@@ -1,6 +1,6 @@
 # ReadersHaven
 Reader's Haven is a customized web application that promotes regular and deliberate reading habits by assisting users in finding books that fit their interests, mood, and free time. The platform prioritizes emotional relevance and simplicity above popularity-driven recommendations, enabling consumers to select books with greater assurance and less anxiety. Reader's Haven is a serene and captivating digital environment that promotes both the practical and emotional sides of reading through mood-based discovery, visually arranged book results, and basic reading progress tracking.
 
-![Wireframe Images](1.png)
-![Wireframe Images](2.png)
-![Wireframe Images](3.png)
+![Wireframe Images](/Wireframe Images/1.png)
+![Wireframe Images](/Wireframe Images/2.png)
+![Wireframe Images](/Wireframe Images/3.png)
