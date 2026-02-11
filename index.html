@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reader’s Haven</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>Reader’s Haven</h1>
+    <p>Find your next read with mood-based discovery.</p>
+  </header>
+
+  <main class="container">
+    <form id="searchForm" class="search">
+      <label for="query">Search</label>
+      <input id="query" name="query" type="text" placeholder="Try: vampire romance, cozy mystery…" required />
+      <button type="submit">Search</button>
+    </form>
+
+    <p class="small">
+      <a href="list.html">Go to My Reading List</a>
+    </p>
+
+    <section id="status" class="status" aria-live="polite"></section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

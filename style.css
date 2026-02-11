@@ -1,0 +1,43 @@
+body {
+    font-family: system-ui, Arial, sans-serif; margin: 0; 
+}
+.container { 
+    max-width: 960px; 
+    margin: 0 auto; 
+    padding: 16px; 
+}
+.search { 
+    display: flex; 
+    gap: 8px; 
+    flex-wrap: wrap; 
+    align-items: end; 
+}
+.search input { 
+    flex: 1; 
+    min-width: 240px; 
+    padding: 8px; 
+}
+button { 
+    padding: 8px 12px; 
+    cursor: pointer; 
+}
+.status {
+     margin: 12px 0; 
+}
+.grid { 
+    display: grid; gap: 12px; 
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+}
+.card { 
+    border: 1px solid #ddd; 
+    border-radius: 12px; 
+    padding: 12px; 
+}
+.card img { 
+    width: 100%; 
+    height: auto; 
+    border-radius: 8px; 
+}
+.small { 
+    font-size: 0.95rem; 
+}
