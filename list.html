@@ -9,18 +9,25 @@
 <body>
   <header class="container">
     <h1>My Reading List</h1>
-    <nav class="small">
+    <nav class="nav">
       <a href="index.html">Home</a>
     </nav>
   </header>
 
   <main class="container">
-    <section id="status" class="status" aria-live="polite"></section>
+    <div class="panel">
+      <p class="muted">
+        Update progress to <strong>Started</strong> or <strong>Finished</strong>. Your changes save to the database.
+      </p>
+      <div id="status" class="status" aria-live="polite"></div>
+    </div>
+
     <section id="list" class="grid" aria-label="Saved books"></section>
   </main>
 
-  <script src="js/storage.js"></script>
-  <script src="js/ui.js"></script>
-  <script src="js/list.js"></script>
+  <script src="js/config.js?v=1"></script>
+  <script src="js/storage.js?v=1"></script>
+  <script src="js/ui.js?v=1"></script>
+  <script src="js/list.js?v=1"></script>
 </body>
 </html>

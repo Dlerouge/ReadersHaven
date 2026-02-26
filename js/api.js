@@ -1,5 +1,6 @@
-async function fetchBooks(query) {
+async function fetchBooksGoogle(query) {
   const key = window.GOOGLE_BOOKS_API_KEY;
+
   const params = new URLSearchParams({
     q: query,
     maxResults: "12",
@@ -12,11 +13,14 @@ async function fetchBooks(query) {
 
   const url = `https://www.googleapis.com/books/v1/volumes?${params.toString()}`;
   const res = await fetch(url, { cache: "no-store" });
-  const data = await res.json();
+
+  let data = {};
+  try { data = await res.json(); } catch {}
 
   if (!res.ok) {
     throw new Error(data?.error?.message || `HTTP ${res.status}`);
   }
 
+  // items can be missing if totalItems is 0
   return data.items || [];
 }

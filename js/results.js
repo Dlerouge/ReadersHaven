@@ -4,28 +4,34 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const params = new URLSearchParams(window.location.search);
   const q = params.get("q");
+  const mood = params.get("mood");
 
   if (!q) {
     setStatus(statusEl, "No search query provided.");
     return;
   }
 
-  setStatus(statusEl, `Searching for “${q}”…`);
+  setStatus(statusEl, mood ? `Mood: ${mood}. Searching…` : "Searching…");
 
   try {
-    const items = await fetchBooks(q);
+    const items = await fetchBooksGoogle(q);
 
     if (items.length === 0) {
-      setStatus(statusEl, `No results found for “${q}”.`);
+      setStatus(statusEl, `No results found for “${q}”. Try a different search.`);
       return;
     }
 
     resultsEl.innerHTML = "";
     items.forEach((item) => {
-      const card = createBookCard(item, {
-        onSave: () => {
-          saveBook(bookToSavedModel(item));
-          setStatus(statusEl, "Saved to your Reading List ✅");
+      const card = createResultCard(item, {
+        onSave: async () => {
+          try {
+            const row = googleItemToDbRow(item);
+            await dbInsertBook(row);
+            setStatus(statusEl, "Saved to your Reading List ✅");
+          } catch (err) {
+            setStatus(statusEl, `Save error: ${err.message}`);
+          }
         }
       });
       resultsEl.appendChild(card);

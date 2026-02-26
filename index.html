@@ -9,24 +9,44 @@
 <body>
   <header class="container">
     <h1>Reader’s Haven</h1>
-    <p>Find your next read with mood-based discovery.</p>
+    <p class="sub">Step through the portal and find your next read.</p>
+    <nav class="nav">
+      <a href="list.html">My Reading List</a>
+    </nav>
   </header>
 
   <main class="container">
-    <form id="searchForm" class="search">
-      <label for="query">Search</label>
-      <input id="query" name="query" type="text" placeholder="Try: vampire romance, cozy mystery…" required />
-      <button type="submit">Search</button>
-    </form>
+    <section class="panel">
+      <h2>Mood Discovery</h2>
+      <p class="muted">Choose a mood for themed recommendations, or search by keyword.</p>
 
-    <p class="small">
-      <a href="list.html">Go to My Reading List</a>
-    </p>
+      <div class="moods" role="group" aria-label="Mood buttons">
+        <button type="button" class="mood" data-mood="cozy">Cozy</button>
+        <button type="button" class="mood" data-mood="adventurous">Adventurous</button>
+        <button type="button" class="mood" data-mood="romantic">Romantic</button>
+        <button type="button" class="mood" data-mood="mysterious">Mysterious</button>
+        <button type="button" class="mood" data-mood="dark">Dark Academia</button>
+      </div>
 
-    <section id="status" class="status" aria-live="polite"></section>
+      <hr />
+
+      <form id="searchForm" class="search" autocomplete="off">
+        <label for="query">Search books</label>
+        <div class="row">
+          <input id="query" name="query" type="text" placeholder="Try: vampire romance, cozy mystery…" required />
+          <button type="submit">Search</button>
+        </div>
+      </form>
+
+      <div id="status" class="status" aria-live="polite"></div>
+    </section>
   </main>
 
-  <script src="js/config.js"></script>
-  <script src="js/main.js"></script>
+  <footer class="container foot">
+    <p class="muted">Prototype build — minimal styling, MVP flows implemented.</p>
+  </footer>
+
+  <script src="js/config.js?v=1"></script>
+  <script src="js/main.js?v=1"></script>
 </body>
 </html>
