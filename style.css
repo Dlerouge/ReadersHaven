@@ -108,6 +108,8 @@ p, label, input, button, select {
 .nav__link--active {
   color: var(--color-soft-pink);
   border-bottom: 3px solid var(--color-gold);
+  font-family: var(--font-heading);
+  font-style: italic;
 }
 
 /* Panels */
