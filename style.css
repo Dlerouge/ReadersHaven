@@ -6,7 +6,8 @@
   --color-black: #2e2a3b;
   --color-border: #d8cfc2;
 
-  --font-main: "Segoe UI", Arial, sans-serif;
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
   --shadow-soft: 0 4px 10px rgba(0, 0, 0, 0.08);
   --radius: 14px;
 }
@@ -14,18 +15,36 @@
 * {
   box-sizing: border-box;
 }
+html, body {
+    height: 100%;
+}
 
 body {
   margin: 0;
-  font-family: var(--font-main);
+  font-family: var(--font-body);
   line-height: 1.5;
   background-color: var(--color-cream);
   color: var(--color-black);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+    flex:1;
 }
 
 img {
   max-width: 100%;
   display: block;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+}
+
+p, label, input, button, select {
+    font-family: var(--font-body);
 }
 
 .container {
@@ -63,6 +82,7 @@ img {
 .site-header__title {
   margin: 0;
   font-size: 2rem;
+  font-family: var(--font-heading);
 }
 
 .site-header__subtitle {

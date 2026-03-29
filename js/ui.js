@@ -59,7 +59,17 @@ function createResultCard(item, { onSave } = {}) {
   btn.type = "button";
   btn.className = "card__button";
   btn.textContent = "Save to Reading List";
-  btn.addEventListener("click", () => onSave?.());
+  btn.addEventListener("click", async () => {
+    try {
+      await onSave?.();
+
+      //Update button UI
+      btn.textContent = "Saved";
+      btn.disabled = true;
+    } catch (err) {
+      console.error(err);
+    }
+  });
 
   actions.append(btn);
   card.append(img, h3, meta, p, actions);
