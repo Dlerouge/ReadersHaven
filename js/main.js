@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     dark: "dark academia gothic mystery"
   };
 
-  document.querySelectorAll(".mood").forEach((btn) => {
+  document.querySelectorAll(".moods__button").forEach((btn) => {
     btn.addEventListener("click", () => {
       const mood = btn.dataset.mood;
       const q = moodMap[mood] || mood;

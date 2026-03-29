@@ -21,6 +21,9 @@ function googleItemToDbRow(item) {
   };
 }
 
+/* =========================
+   RESULTS PAGE CARD
+========================= */
 function createResultCard(item, { onSave } = {}) {
   const info = item.volumeInfo || {};
   const title = info.title || "Untitled";
@@ -29,59 +32,71 @@ function createResultCard(item, { onSave } = {}) {
   const thumb = info.imageLinks?.thumbnail || info.imageLinks?.smallThumbnail || "";
 
   const card = document.createElement("article");
-  card.className = "card";
+  card.className = "card card--results";
 
   const img = document.createElement("img");
+  img.className = "card__image";
   img.alt = `Cover of ${title}`;
   img.loading = "lazy";
   img.src = thumb || NO_COVER;
 
   const h3 = document.createElement("h3");
+  h3.className = "card__title";
   h3.textContent = title;
 
   const meta = document.createElement("div");
-  meta.className = "meta";
+  meta.className = "card__meta";
   meta.textContent = `By: ${authors}`;
 
   const p = document.createElement("p");
+  p.className = "card__summary";
   p.textContent = desc;
 
   const actions = document.createElement("div");
-  actions.className = "actions";
+  actions.className = "card__actions";
 
   const btn = document.createElement("button");
   btn.type = "button";
+  btn.className = "card__button";
   btn.textContent = "Save to Reading List";
   btn.addEventListener("click", () => onSave?.());
 
   actions.append(btn);
   card.append(img, h3, meta, p, actions);
+
   return card;
 }
 
+/* =========================
+   READING LIST CARD
+========================= */
 function createListCard(row, { onStatusChange, onRemove } = {}) {
   const card = document.createElement("article");
-  card.className = "card";
+  card.className = "card card--saved";
 
   const img = document.createElement("img");
+  img.className = "card__image";
   img.alt = `Cover of ${row.title}`;
   img.loading = "lazy";
   img.src = row.thumbnail || NO_COVER;
 
   const h3 = document.createElement("h3");
+  h3.className = "card__title";
   h3.textContent = row.title;
 
   const meta = document.createElement("div");
-  meta.className = "meta";
+  meta.className = "card__meta";
   meta.textContent = `By: ${row.authors || "Unknown author"}`;
 
   const p = document.createElement("p");
+  p.className = "card__summary";
   p.textContent = truncate(row.description || "", 220);
 
   const actions = document.createElement("div");
-  actions.className = "actions";
+  actions.className = "card__actions";
 
   const select = document.createElement("select");
+  select.className = "card__select";
   select.setAttribute("aria-label", "Reading status");
 
   const options = [
@@ -102,6 +117,7 @@ function createListCard(row, { onStatusChange, onRemove } = {}) {
 
   const removeBtn = document.createElement("button");
   removeBtn.type = "button";
+  removeBtn.className = "card__button";
   removeBtn.textContent = "Remove";
   removeBtn.addEventListener("click", () => onRemove?.());
 

@@ -7,18 +7,34 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="container">
-    <h1>Search Results</h1>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="list.html">My Reading List</a>
-    </nav>
+  <header class="site-header container">
+    <div class="site-header__top">
+      <div class="site-header__branding">
+        <img src="Logo.png" alt="Reader's Haven logo" class="site-header__logo" />
+      </div>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="list.html" class="nav__link">Saved Books</a>
+      </nav>
+    </div>
+
+    <div class="site-header__title-group">
+      <h1 class="site-header__title">Search Results</h1>
+      <p class="site-header__subtitle">Browse your recommended books and save the ones you want to read.</p>
+    </div>
   </header>
 
   <main class="container">
     <div id="status" class="status" aria-live="polite"></div>
-    <section id="results" class="grid" aria-label="Book results"></section>
+    <section id="results" class="book-grid" aria-label="Book results"></section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__text">Explore new stories and save your favorites to your reading list.</p>
+    </div>
+  </footer>
 
   <script src="js/config.js?v=1"></script>
   <script src="js/api.js?v=1"></script>
