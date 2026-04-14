@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", async () => {
               await dbUpdateStatus(row.id, newStatus);
               setStatus(statusEl, "Progress updated ✅");
             } catch (err) {
-              setStatus(statusEl, `Update error: ${err.message}`);
+              const message = err?.message || "Unable to update reading status.";
+              setStatus(statusEl, `Update error: ${message}`);
             }
           },
           onRemove: async () => {
@@ -30,7 +31,8 @@ document.addEventListener("DOMContentLoaded", async () => {
               setStatus(statusEl, "Removed from your list ✅");
               await refresh();
             } catch (err) {
-              setStatus(statusEl, `Delete error: ${err.message}`);
+              const message = err?.message || "Unable to remove this book.";
+              setStatus(statusEl, `Delete error: ${message}`);
             }
           }
         });
@@ -40,8 +42,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       setStatus(statusEl, `Loaded ${rows.length} saved book(s).`);
     } catch (err) {
-      console.error(err);
-      setStatus(statusEl, `Error: ${err.message}`);
+      const message = err?.message || "Something went wrong while loading your reading list.";
+      setStatus(statusEl, `Error: ${message}`);
     }
   }
 

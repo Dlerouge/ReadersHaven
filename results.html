@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="book recommendations" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Browse Reader’s Haven search results to discover books that match your interests and save them to your reading list."
+  />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   <title>Results — Reader’s Haven</title>
   <link rel="stylesheet" href="style.css" />
@@ -27,13 +31,27 @@
   </header>
 
   <main class="container">
+    <h2 class="sr-only">Book Search Results</h2>
     <div id="status" class="status" aria-live="polite"></div>
     <section id="results" class="book-grid" aria-label="Book results"></section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p class="site-footer__text">Explore new stories and save your favorites to your reading list.</p>
+    <div class="container site-footer__content">
+      <div class="site-footer__brand">
+        <h3>Reader’s Haven</h3>
+        <p>Discover your next favorite book, one mood at a time.</p>
+      </div>
+
+      <div class="site-footer__links">
+        <a href="index.html">Home</a>
+        <a href="list.html">Reading List</a>
+      </div>
+
+      <div class="site-footer__meta">
+        <p>&copy; 2026 Reader’s Haven</p>
+        <p>Designed by De'ovyun LeRouge</p>
+      </div>
     </div>
   </footer>
 

@@ -170,16 +170,22 @@ p, label, input, button, select {
 
 .search__input {
   flex: 1;
-  min-width: 220px;
-  padding: 12px;
-  border: 1px solid var(--color-border);
+  padding: 0.9rem 1rem;
+  border: 2px solid var(--color-lavender); /* purple border */
   border-radius: 10px;
-  background-color: var(--color-lavender);
-  color: var(--color-black);
+  font-size: 1rem;
+  font-family: Inter, sans-serif;
+  background-color: #ffffff; /* keep background clean */
+  color: #2d1b2e;
 }
 
 .search__input::placeholder {
   color: #333;
+}
+.search__input:focus {
+  outline: none;
+  border-color: #6f3f8c; /* darker purple */
+  box-shadow: 0 0 0 3px rgba(140, 95, 168, 0.2);
 }
 
 .search__button {
@@ -283,10 +289,51 @@ p, label, input, button, select {
   padding: 18px 0;
 }
 
-.site-footer__text {
-  margin: 0;
-  text-align: center;
-  font-weight: 500;
+.site-footer {
+  background-color: var(--color-lavender);
+  color: var(--color-black);
+  margin-top: 3rem;
+  padding: 2rem 1rem;
+}
+
+.site-footer__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.site-footer__brand h3 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 0.5rem;
+}
+
+.site-footer__brand p {
+  max-width: 250px;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.site-footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 15px;
+}
+
+.site-footer__links a {
+  color: #f8f3eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-footer__links a:hover {
+  text-decoration: underline;
+}
+
+.site-footer__meta {
+  font-size: 0.85rem;
+  opacity: 0.8;
 }
 
 /* Responsive Design */
@@ -327,5 +374,11 @@ p, label, input, button, select {
 
   .site-header__title {
     font-size: 1.6rem;
+  }
+
+  .site-footer__content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
   }
 }
