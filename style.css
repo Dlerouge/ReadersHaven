@@ -253,6 +253,8 @@ p, label, input, button, select {
 
 .card__meta {
   font-size: 0.9rem;
+  font-weight: bold;
+  padding-top: 10px;
 }
 
 .card__actions {
